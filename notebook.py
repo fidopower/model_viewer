@@ -81,7 +81,7 @@ def _(mo, model, os, pd):
             except:
                 _reader = lambda x: open(x).read()
             _files[_file] = _reader(_file)
-    files_ui = mo.ui.tabs(_files)
+    files_ui = mo.ui.tabs(_files) if _files else mo.md("No files found")
     return (files_ui,)
 
 
